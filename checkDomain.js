@@ -226,7 +226,7 @@ function _loadAASAContents(domain) {
     });
 }
 
-function _checkDomain(domain, bundleIdentifier, teamIdentifier, allowUnencrypted) {
+function _checkDomain(domain, bundleIdentifier, teamIdentifier, allowUnencrypted = true) {
     // Clean up domains, removing scheme and path
     var cleanedDomain = domain.replace(/https?:\/\//, '');
     cleanedDomain = cleanedDomain.replace(/\/.*/, '');

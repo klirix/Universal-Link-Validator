@@ -26,10 +26,9 @@ app.post('/domain/:domain', function (httpReq, httpResp) {
     var domain = httpReq.params.domain;
     var bundleIdentifier = httpReq.query.bundleIdentifier;
     var teamIdentifier = httpReq.query.teamIdentifier;
-    var allowUnencrypted = httpReq.query.allowUnencrypted === 'true'; // F Javascript.
     var respObj = { domains: { } };
 
-    return checkDomain(domain, bundleIdentifier, teamIdentifier, allowUnencrypted)
+    return checkDomain(domain, bundleIdentifier, teamIdentifier)
         .then(function(results) {
             respObj.domains[domain] = results;
 
